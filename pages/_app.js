@@ -1,7 +1,18 @@
-import '@styles/globals.css'
+import PropTypes from 'prop-types';
+import '@styles/globals.css';
 
-function Application({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const Application = ({Component, pageProps}) => {
+    return <Component {...pageProps} />;
+};
 
-export default Application
+Application.propTypes = {
+    Component: PropTypes.func,
+    pageProps: PropTypes.object,
+};
+
+Application.defaultProps = {
+    Component: () => {},
+    pageProps: {},
+};
+
+export default Application;
